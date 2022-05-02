@@ -1,3 +1,27 @@
 #main-logo {
     width: 150px;
 }
+
+.container > div > .oferta-elementos {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+@media ( max-width: 768px ) {
+    .container > div > .oferta-elementos {
+        position: static;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
+
+.ver-mas-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
