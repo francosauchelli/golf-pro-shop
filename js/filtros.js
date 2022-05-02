@@ -82,7 +82,7 @@ const agregarItemsFiltro = ( itemsFiltro, nombreFiltro ) => {
     const itemLista = document.createElement( 'li' );
 
     itemsFiltro.forEach( item => { 
-        itemLista.innerHTML = `
+        itemLista.innerHTML += `
             <p class="capitaliza-texto" >${ item }<p>
         `;
     });
