@@ -45,7 +45,8 @@ export const obtenerPublicOferta = () => {
 }
 
 export const filtrarProductos = () => {
-    const queryFirebase = query( collection( db, 'productos' ), where( 'genero', '==', 'femenino'))
+    const queryFirebase = query( collection( db, 'productos' ) )
+    // const queryFirebase = query( collection( db, 'productos' ), where( 'genero', '==', 'any'))
     const productosFiltrados = getDocs( queryFirebase );
     return productosFiltrados;
 }
