@@ -21,10 +21,10 @@
     <link rel="stylesheet" href="vendors/jquery-ui/jquery-ui.css" />
     <!-- main css -->
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/responsive.css" />
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/producto-style.css">
-    <link rel="stylesheet" href="css/fontello.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/carrito.css" />
+    <link rel="stylesheet" href="css/fontello.css"/>
   </head>
 
   <body>
@@ -60,7 +60,6 @@
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="carrito.html">Carrito de Compras</a>
-                        <!-- <a class="nav-link" href="single-product.html">Carrito de Compras</a> -->
                       </li>
                     </ul>
                   </li>
@@ -107,20 +106,22 @@
       </div>
     </div>
   </header>
-  <!--================Header Menu Area =================-->
+  <!--================Header Menu Area s=================-->
 
     <!--================Home Banner Area =================-->
     <section class="banner_area">
       <div class="banner_inner d-flex align-items-center">
         <div class="container">
-          <div class="banner_content d-md-flex justify-content-between align-items-center">
+          <div
+            class="banner_content d-md-flex justify-content-between align-items-center"
+          >
             <div class="mb-3 mb-md-0">
-              <h2>Nuestros Productos</h2>
-              <p>Se puede agregar un comentario</p>
+              <h2>Tu carrito</h2>
+              <p>se puede agregar comentario</p>
             </div>
             <div class="page_link">
               <a href="index.html">Home</a>
-              <a href="productos.html">Productos</a>
+              <a href="cart.html">Carrito</a>
             </div>
           </div>
         </div>
@@ -128,33 +129,48 @@
     </section>
     <!--================End Home Banner Area =================-->
 
-    <!--================Category Product Area =================-->
-    <section class="cat_product_area section_gap">
+    <!--================Cart Area =================-->
+    <section class="cart_area">
       <div class="container">
-        <div class="row flex-row-reverse">
-          <div class="col-lg-9">
-            <div class="product_top_bar">
-              <div class="left_dorp">
-                <select class="sorting" id="selectOrdenar" >
-                  <option value="">Más Populares</option>
-                  <option value="1">Menor Precio</option>
-                  <option value="2">Mayor Precio</option>
-                </select>
-              </div>
-            </div>
-            <div class="latest_product_inner">
-              <div class="prods-filtro row" id="filtrosProdsContainer">
-                <!-- muestra productos filtrados -->
-              </div>
-            </div>
-          </div>
-          <div class="filtros-container col-lg-3">
-          </div>
+        <div class="cart_inner">
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Producto</th>
+                  <th scope="col">Detalle</th>
+                  <th scope="col">Precio</th>
+                </tr>
+              </thead>
+              <tbody id="body-detalle-carrito">
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <h5>Subtotal</h5>
+                  </td>
+                  <td>
+                    <h5 id="subtotalCarrito"></h5>
+                  </td>
+                </tr>
+                <tr class="out_button_area">
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <div class="checkout_btn_inner">
+                      <a class="gray_btn" href="index.html">Seguir Comprando</a>
+                      <a class="main_btn" id="botonFinalizarCompra">Confirmar Pedido</a>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
     </section>
-    <!--================End Category Product Area =================-->
+    <!--================End Cart Area =================-->
 
   <!--================ start footer Area  =================-->
   <footer class="footer-area section_gap">
@@ -205,6 +221,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
   <!--================ End footer Area  =================-->
 
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="js/jquery-3.2.1.min.js"></script>
@@ -222,10 +239,15 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="vendors/counter-up/jquery.waypoints.min.js"></script>
     <script src="vendors/counter-up/jquery.counterup.js"></script>
     <script src="js/theme.js"></script>
-    <!-- scripts de los desarrolladores -->
+      <!--================== archivos de los desarrolladores =================-->
     <script type="module" src="js/data/firebase.js"></script>
+    <!-- <script type='module' src="js/main.js"></script> -->
+    <script type="module" src="js/adminForm/admin-funciones.js"></script>
+    <script src="js/productoDestacado.js"></script>
+    <script type="module" src="js/productos-main.js"></script>
+    <script src="js/events/eventos.js"></script>
+    <script type='module' src="js/login/login.js"></script>
     <script type='module' src="js/carrito.js"></script>
-    <script type="module" src="js/productos-filtro.js"></script>
-    <script type="module" src="js/filtros.js"></script>
+    <script type='module' src="js/carritoTemplate.js"></script>
   </body>
 </html>

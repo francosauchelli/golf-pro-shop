@@ -1,63 +1,93 @@
-import { filtrarProductos } from './data/firebase.js';
+import { obtenerProductos } from './data/firebase.js';
+import { crearListaFiltros, mostrarFiltrosCargados, filtrosCargados } from './filtros.js';
+import { actualizarCarritoBadge, cargarEventoProdMain } from './carrito.js';
 
+window.addEventListener( 'DOMContentLoaded', () => {
 
-window.addEventListener( 'DOMContentLoaded', async () => {
-    
-    const querySnapshot = await filtrarProductos();
+    cargarTemplateProductos();
 
-    mostrarProductosFiltro( querySnapshot );
-
-
-    crearListaFiltros( querySnapshot );
-    
 })
-
-
 
 const prodFiltroContainer = 
     document.getElementsByClassName( 'prods-filtro' );
 
+
 const mostrarProductosFiltro = ( productos ) => {
+
+    // para vaciar el div
+    document.getElementById( 'filtrosProdsContainer' ).replaceChildren();
     
     productos.forEach( prod => {
-        const { nombre, precio, imagen } = prod.data();
-        
+        const { nombre, talle, precio, imagen, precioAnterior } = prod.data();
+
         const tarjetaProdFiltro = document.createElement('div');
         tarjetaProdFiltro.setAttribute('class', 'col-lg-4 col-md-6');
-        
+
         tarjetaProdFiltro.innerHTML = `
             <div class="single-product">
                 <div class="product-img">
                     <img
                     class="card-img"
-                    src="img/product/productos/${ imagen }"
+                    src="${ imagen[0] }"
                     alt=""
                     />
                     <div class="p_icon">
-                        <a href="#">
-                            <i class="ti-eye"></i>
+                        <a href="productoIndividual.html?id=${ prod.id }">
+                            <i class="ti-eye icono-ver-prod"></i>
                         </a>
-                        <a href="#">
-                            <i class="ti-heart"></i>
-                        </a>
-                        <a href="#">
+                        <a class='carrito-tarjeta-btn' id="carrito-agergar-prod" data-id='${ prod.id }'>
                             <i class="ti-shopping-cart"></i>
                         </a>
                     </div>
                 </div>
                 <div class="product-btm">
-                    <a href="#" class="d-block">
+                    <a class="detalle-tarjeta" href="#" class="d-block">
                         <h4>${ nombre }</h4>
+                        <p>
+                            ${ talle!==undefined ? ( `Talle ${ talle }` ) : ( '' ) }    
+                        </p>
                     </a>
                     <div class="mt-3">
                         <span class="mr-4">$${ precio }</span>
-                        <del>$35.00</del>
+                        <del>
+                            ${ precioAnterior ?
+                                ( `$${ precioAnterior }` )
+                                : ('') }
+                        </del>
                     </div>
                 </div>
             </div>
         `;
         prodFiltroContainer[0].prepend( tarjetaProdFiltro );
+
+        cargarEventoProdMain();
     })
 }
+
+export const cargarTemplateProductos = async () => {
+
+    const querySnapshot = await obtenerProductos( filtrosCargados[ filtrosCargados.length-1 ] );
+
+    mostrarProductosFiltro( querySnapshot );
+
+    crearListaFiltros( querySnapshot );
+
+    mostrarFiltrosCargados();
+    
+    actualizarCarritoBadge();
+}
+
+const selectOrden = document.getElementById( 'selectOrdenar' );
+selectOrden.addEventListener( 'change', () => {
+    cargarTemplateProductos();
+});
+
+
+
+
+
+
+
+
 
 

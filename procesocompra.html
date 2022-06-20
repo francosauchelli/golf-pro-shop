@@ -7,8 +7,8 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <link rel="icon" href="img/icon/golf-clubs.ico" type="image/ico" />
-    <title>Golf Pro Shop</title>
+    <link rel="icon" href="img/favicon.png" type="image/png" />
+    <title>Eiser ecommerce</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.css" />
     <link rel="stylesheet" href="vendors/linericon/style.css" />
@@ -21,10 +21,10 @@
     <link rel="stylesheet" href="vendors/jquery-ui/jquery-ui.css" />
     <!-- main css -->
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/responsive.css" />
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/producto-style.css">
-    <link rel="stylesheet" href="css/fontello.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+	<link rel="stylesheet" href="css/fontello.css"/>
+	<link rel="stylesheet" href="css/proceso-compra.css"/>
   </head>
 
   <body>
@@ -76,6 +76,9 @@
                       </li>
                     </ul>
                   </li>
+                  <!-- <li class="nav-item">
+                    <a class="nav-link" href="#">Contacto</a>
+                  </li> -->
                 </ul>
               </div>
 
@@ -110,51 +113,25 @@
   <!--================Header Menu Area =================-->
 
     <!--================Home Banner Area =================-->
-    <section class="banner_area">
-      <div class="banner_inner d-flex align-items-center">
-        <div class="container">
-          <div class="banner_content d-md-flex justify-content-between align-items-center">
-            <div class="mb-3 mb-md-0">
-              <h2>Nuestros Productos</h2>
-              <p>Se puede agregar un comentario</p>
-            </div>
-            <div class="page_link">
-              <a href="index.html">Home</a>
-              <a href="productos.html">Productos</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--================End Home Banner Area =================-->
+	<!-- Apertura Como Comprar -->
+	<div class="bodyContact">
+		<h1 class="titleContact">COMPRÁ ONLINE RÁPIDO Y FÁCIL, GANÁ TIEMPO</h1>
+		<h3 class="textContact">Sí queres comprar de la formas más sencilla, rápida y que te permite ahorrar tu tiempo.</h3>
+    <h3 class="textContact">Acá te detallmos cual es la forma para que lo hagas:</h3>
+		<div class="numberContact">
+			<p>1) Selecciona el producto que te gustó y agrégalo a tu carrito (lo vas a ver en la esquina superior derecha).</p>
+			<p>2) Cuando hayas elegido todos los productos desados, dirigite al carrito para revisar los detalles de cada producto</p>
+			<p>(No te olvides de revisar el precio de cada producto y el total de la compra)</p>
+			
+      <p>3) Cuando confirmes la compra, la página va a redireccionarte a una conversación privada de Whatsapp con el detalle de los productos seleccionados.</p>
+			<p>4) Juntos coordinaremos el medio de pago y el envío de tu pedido (recordá que trabajamos con Correo Argentino).</p>
+			<p>5) De seleccionar el envío por correo, te enviaremos el número o guía para que puedas seguirlo, una vez que lo despachemos.</p>
+		</div>
+		<h3 class="retiroContact">Si seleccionaste recogida local, recordá que deberá retirarlo la persona que hayas indicado cuando se confirmó el pedido, con su identificación correspondiente.</h3>
+		<h4 class="agradecimientoContact">¡MUCHAS GRACIAS!</h4>
+	</div>
 
-    <!--================Category Product Area =================-->
-    <section class="cat_product_area section_gap">
-      <div class="container">
-        <div class="row flex-row-reverse">
-          <div class="col-lg-9">
-            <div class="product_top_bar">
-              <div class="left_dorp">
-                <select class="sorting" id="selectOrdenar" >
-                  <option value="">Más Populares</option>
-                  <option value="1">Menor Precio</option>
-                  <option value="2">Mayor Precio</option>
-                </select>
-              </div>
-            </div>
-            <div class="latest_product_inner">
-              <div class="prods-filtro row" id="filtrosProdsContainer">
-                <!-- muestra productos filtrados -->
-              </div>
-            </div>
-          </div>
-          <div class="filtros-container col-lg-3">
-          </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--================End Category Product Area =================-->
+	<!--Cierre Como Comprar -->
 
   <!--================ start footer Area  =================-->
   <footer class="footer-area section_gap">
@@ -188,6 +165,7 @@
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
         <div class="col-lg-4 col-md-12 footer-social">
+          <!-- <a href="#"><i class="fa fa-facebook"></i></a> -->
           <a href="https://www.instagram.com/golf.usa2.ok/"><i class="fa fa-instagram"></i></a>
           <a href="https://wa.me/5493513430638?text=¡Golf%20Pro%20Shop!%20Hola,%20quiero%20contactarte."><i class="fa fa-whatsapp"></i></a>
         </div>
@@ -205,27 +183,24 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
   <!--================ End footer Area  =================-->
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/popper.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/stellar.js"></script>
-    <script src="vendors/lightbox/simpleLightbox.min.js"></script>
-    <script src="vendors/nice-select/js/jquery.nice-select.min.js"></script>
-    <script src="vendors/isotope/imagesloaded.pkgd.min.js"></script>
-    <script src="vendors/isotope/isotope-min.js"></script>
-    <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
-    <script src="js/jquery.ajaxchimp.min.js"></script>
-    <script src="js/mail-script.js"></script>
-    <script src="vendors/jquery-ui/jquery-ui.js"></script>
-    <script src="vendors/counter-up/jquery.waypoints.min.js"></script>
-    <script src="vendors/counter-up/jquery.counterup.js"></script>
-    <script src="js/theme.js"></script>
-    <!-- scripts de los desarrolladores -->
-    <script type="module" src="js/data/firebase.js"></script>
-    <script type='module' src="js/carrito.js"></script>
-    <script type="module" src="js/productos-filtro.js"></script>
-    <script type="module" src="js/filtros.js"></script>
-  </body>
+
+
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/popper.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/stellar.js"></script>
+	<script src="vendors/lightbox/simpleLightbox.min.js"></script>
+	<script src="vendors/nice-select/js/jquery.nice-select.min.js"></script>
+	<script src="vendors/isotope/imagesloaded.pkgd.min.js"></script>
+	<script src="vendors/isotope/isotope-min.js"></script>
+	<script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+	<script src="vendors/jquery-ui/jquery-ui.js"></script>
+	<script src="js/jquery.ajaxchimp.min.js"></script>
+	<script src="js/mail-script.js"></script>
+	<script src="js/theme.js"></script>
+</body>
+
 </html>

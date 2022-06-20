@@ -21,8 +21,8 @@
     <link rel="stylesheet" href="vendors/jquery-ui/jquery-ui.css" />
     <!-- main css -->
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/responsive.css" />
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css" />
     <link rel="stylesheet" href="css/producto-style.css">
     <link rel="stylesheet" href="css/fontello.css" />
   </head>
@@ -60,7 +60,6 @@
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="carrito.html">Carrito de Compras</a>
-                        <!-- <a class="nav-link" href="single-product.html">Carrito de Compras</a> -->
                       </li>
                     </ul>
                   </li>
@@ -113,14 +112,16 @@
     <section class="banner_area">
       <div class="banner_inner d-flex align-items-center">
         <div class="container">
-          <div class="banner_content d-md-flex justify-content-between align-items-center">
+          <div
+            class="banner_content d-md-flex justify-content-between align-items-center"
+          >
             <div class="mb-3 mb-md-0">
-              <h2>Nuestros Productos</h2>
-              <p>Se puede agregar un comentario</p>
+              <h2>Detalle del Producto</h2>
+              <p>se puede agregar un comentario</p>
             </div>
             <div class="page_link">
               <a href="index.html">Home</a>
-              <a href="productos.html">Productos</a>
+              <a href="single-product.html">Detalle del Producto</a>
             </div>
           </div>
         </div>
@@ -128,33 +129,60 @@
     </section>
     <!--================End Home Banner Area =================-->
 
-    <!--================Category Product Area =================-->
-    <section class="cat_product_area section_gap">
+    <!--================Single Product Area =================-->
+    <div class="product_image_area">
       <div class="container">
-        <div class="row flex-row-reverse">
-          <div class="col-lg-9">
-            <div class="product_top_bar">
-              <div class="left_dorp">
-                <select class="sorting" id="selectOrdenar" >
-                  <option value="">Más Populares</option>
-                  <option value="1">Menor Precio</option>
-                  <option value="2">Mayor Precio</option>
-                </select>
-              </div>
-            </div>
-            <div class="latest_product_inner">
-              <div class="prods-filtro row" id="filtrosProdsContainer">
-                <!-- muestra productos filtrados -->
+        <div class="row s_product_inner">
+          <div class="col-lg-6">
+            <div class="s_product_img">
+              <div
+                id="carouselExampleIndicators"
+                class="carousel slide"
+                data-ride="carousel"
+              >
+                <ol class="carousel-indicators" id="carrousel-list">
+                </ol>
+                <div class="carousel-inner" id="carrousel-imagen-producto">
+                </div>
               </div>
             </div>
           </div>
-          <div class="filtros-container col-lg-3">
-          </div>
+          <div class="col-lg-5 offset-lg-1">
+            <div class="s_product_text" id="prod-individual-contenedor">
+              <h3 id="prod-individual-nombre"></h3>
+              <h2 id="prod-individual-precio"></h2>
+              <ul class="list">
+                <li>
+                  <a class="active" id="prod-individual-marca" ></a>
+                </li>
+                <li>
+                  <a class="active" id="prod-individual-talle" ></a>
+                </li>
+                <li>
+                  <a class="active" id="prod-individual-genero" ></a>
+                </li>
+                <li>
+                  <a class="active" id="prod-individual-categoria" ></a>
+                </li>
+              </ul>
+              <p></p>
+              <div class="card_area">
+                <a class="main_btn carrito-agergar-prod" id="carrito-agergar-indiv">Agregar al Carrito</a>
+
+              </div>
+            </div>
           </div>
         </div>
       </div>
+    </div>
+    <!--================End Single Product Area =================-->
+
+    <!--================Product Description Area =================-->
+    <section class="product_description_area">
+      <div class="container">
+      </div>
     </section>
-    <!--================End Category Product Area =================-->
+    <!--================End Product Description Area =================-->
 
   <!--================ start footer Area  =================-->
   <footer class="footer-area section_gap">
@@ -188,6 +216,7 @@
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
         <div class="col-lg-4 col-md-12 footer-social">
+          <!-- <a href="#"><i class="fa fa-facebook"></i></a> -->
           <a href="https://www.instagram.com/golf.usa2.ok/"><i class="fa fa-instagram"></i></a>
           <a href="https://wa.me/5493513430638?text=¡Golf%20Pro%20Shop!%20Hola,%20quiero%20contactarte."><i class="fa fa-whatsapp"></i></a>
         </div>
@@ -204,6 +233,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
   <!--fin ícono fijo de Whatsapp -->
 
   <!--================ End footer Area  =================-->
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -222,10 +252,19 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="vendors/counter-up/jquery.waypoints.min.js"></script>
     <script src="vendors/counter-up/jquery.counterup.js"></script>
     <script src="js/theme.js"></script>
-    <!-- scripts de los desarrolladores -->
+    <!--================== archivos de los desarrolladores =================-->
     <script type="module" src="js/data/firebase.js"></script>
+    <!-- <script type='module' src="js/main.js"></script> -->
+    <!-- <script type="module" src="js/adminForm/admin-funciones.js"></script> -->
+    <!-- <script src="js/productos-destacados.js"></script> -->
+    <!-- <script src="js/productos-nuevos.js"></script> -->
+    <!-- <script src="js/prod-nuevo-destacado.js"></script> -->
+    <!-- <script src="js/publicacion-oferta.js"></script> -->
+    <!-- <script src="js/productos-main.js"></script> -->
+    <!-- <script src="js/events/eventos.js"></script> -->
+    <!-- <script type='module' src="js/login/login.js"></script> -->
+    <!-- <script type="module" src="js/productos-filtro.js"></script> -->
+    <script type="module" src="js/productoIndividual.js"></script>
     <script type='module' src="js/carrito.js"></script>
-    <script type="module" src="js/productos-filtro.js"></script>
-    <script type="module" src="js/filtros.js"></script>
   </body>
 </html>
